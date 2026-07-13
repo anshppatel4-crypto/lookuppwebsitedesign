@@ -3,11 +3,12 @@
 import { motion } from 'framer-motion'
 import { STEPS } from '@/lib/site'
 import { Reveal } from './motion'
+import { Wave } from './Flow'
 
 export default function HowItWorks() {
   return (
-    <section className="bg-[#f6f7fb] py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="relative overflow-hidden bg-[#f6f7fb] py-24">
+      <div className="relative z-10 mx-auto max-w-6xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-[#3055CF]">How it works</span>
           <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-[#16163F] sm:text-5xl">
@@ -37,6 +38,7 @@ export default function HowItWorks() {
           ))}
         </div>
       </div>
+      <Wave fill="#16163F" variant={2} height={130} />
     </section>
   )
 }

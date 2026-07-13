@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <BackgroundLayer />
           <Navbar />
-          <main>{children}</main>
+          <main className="pt-[84px]">{children}</main>
           <Footer />
           <Toaster position="top-center" richColors />
         </Providers>

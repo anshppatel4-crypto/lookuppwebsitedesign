@@ -4,6 +4,7 @@ import { Mail, Phone, Instagram } from 'lucide-react'
 import ContactForm from './ContactForm'
 import { Reveal } from './motion'
 import { SITE } from '@/lib/site'
+import { Wave, ParallaxBlob } from './Flow'
 
 export default function ContactSection() {
   const items = [
@@ -53,6 +54,8 @@ export default function ContactSection() {
           </Reveal>
         </div>
       </div>
+      <ParallaxBlob from={-60} to={60} className="absolute left-[-6rem] top-[20%] h-[24rem] w-[24rem] rounded-full bg-gradient-to-br from-[#3055CF]/10 to-[#116DFF]/8 blur-3xl" />
+      <Wave fill="#16163F" variant={3} height={130} />
     </section>
   )
 }

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Wave } from './Flow'
 
 export default function Stats() {
   return (
@@ -29,6 +30,7 @@ export default function Stats() {
           of screen-free, face-to-face interaction.
         </motion.h2>
       </div>
+      <Wave fill="#f6f7fb" variant={1} height={130} />
     </section>
   )
 }

@@ -5,6 +5,7 @@ import { PlayCircle } from 'lucide-react'
 import { VIDEOS } from '@/lib/site'
 import { Reveal } from './motion'
 import PhoneVideo from './PhoneVideo'
+import { Wave } from './Flow'
 
 export default function Demo() {
   return (
@@ -42,6 +43,7 @@ export default function Demo() {
           ))}
         </div>
       </div>
+      <Wave fill="#ffffff" variant={3} height={130} />
     </section>
   )
 }

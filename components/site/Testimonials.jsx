@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react'
 import { TESTIMONIALS } from '@/lib/site'
 import { Reveal } from './motion'
+import { Wave } from './Flow'
 
 export default function Testimonials() {
   const [i, setI] = useState(0)
@@ -26,8 +27,8 @@ export default function Testimonials() {
   const t = TESTIMONIALS[i]
 
   return (
-    <section className="bg-[#f6f7fb] py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <section className="relative overflow-hidden bg-[#f6f7fb] py-24">
+      <div className="relative z-10 mx-auto max-w-4xl px-6">
         <Reveal className="text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-[#3055CF]">Testimonials</span>
           <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-[#16163F] sm:text-5xl">
@@ -85,6 +86,7 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+      <Wave fill="#ffffff" variant={2} height={130} />
     </section>
   )
 }

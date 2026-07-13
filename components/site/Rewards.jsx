@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { REWARDS, SCREENSHOTS } from '@/lib/site'
 import { Reveal } from './motion'
 import PhoneMockup from './PhoneMockup'
+import { Wave, ParallaxBlob } from './Flow'
 
 export default function Rewards() {
   return (
@@ -55,6 +56,8 @@ export default function Rewards() {
           </div>
         </div>
       </div>
+      <ParallaxBlob from={-70} to={70} className="absolute right-[-8rem] top-[8%] h-[26rem] w-[26rem] rounded-full bg-gradient-to-br from-[#116DFF]/12 to-[#3055CF]/8 blur-3xl" />
+      <Wave fill="#16163F" variant={4} height={130} />
     </section>
   )
 }

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Apple, ArrowRight } from 'lucide-react'
 import PhoneMockup from './PhoneMockup'
 import { SITE, SCREENSHOTS } from '@/lib/site'
+import { Wave, ParallaxBlob } from './Flow'
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
         <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[#9E3FFD]/10 blur-3xl animate-blob" style={{ animationDelay: '6s' }} />
       </div>
 
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-24 pt-16 md:grid-cols-2 md:pt-24">
+      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-28 pt-6 md:grid-cols-2 md:pt-12">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,8 +75,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* soft slanted divider echoing original brand */}
-      <div className="h-16 bg-gradient-to-r from-[#116DFF] to-[#3055CF]" style={{ clipPath: 'polygon(0 60%, 100% 0, 100% 100%, 0 100%)' }} />
+      {/* soft organic transition into next section */}
+      <Wave fill="#f6f7fb" variant={1} height={130} />
     </section>
   )
 }

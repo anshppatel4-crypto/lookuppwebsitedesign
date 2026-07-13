@@ -92,5 +92,7 @@ lib/site.js            # all content + config (links, team, testimonials, suppor
 
 ## Notes
 - Animations use Framer Motion (fade-ins, slide-ins, hover scaling, floating phones, animated gradient blobs, scroll reveal).
+- **Interactive "human connection" background** (`components/site/ConnectionBackground.jsx`, mounted once in `layout.js` so it never restarts on navigation): a custom Three.js network of 80&ndash;150 glowing nodes ("people") that drift, connect with proximity-based glowing lines, gently ripple away from the cursor, parallax on scroll, and rarely organise into a heart when idle ~8s. It auto-reduces node count on mobile, pauses when the tab is hidden, respects `prefers-reduced-motion`, and disables interactions on low-power devices. Tune intensity via the wrapper `opacity` (~0.58) and node count in that file.
 - SEO: title `Lookupp | People > Screens`, meta description, and Open Graph tags in `app/layout.js`.
+- Demo videos live in `/public/videos` (transcoded to H.264 for browser compatibility, with poster frames).
 - All submissions use UUIDs (no Mongo ObjectIDs) for clean JSON.

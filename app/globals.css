@@ -46,8 +46,12 @@
   * {
     @apply border-border;
   }
+  html {
+    background-color: #ffffff;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: transparent;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

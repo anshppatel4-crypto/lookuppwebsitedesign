@@ -2,6 +2,7 @@ import './globals.css'
 import { Providers } from './providers'
 import Navbar from '@/components/site/Navbar'
 import Footer from '@/components/site/Footer'
+import BackgroundLayer from '@/components/site/BackgroundLayer'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Providers>
+          <BackgroundLayer />
           <Navbar />
           <main>{children}</main>
           <Footer />

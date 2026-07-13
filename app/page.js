@@ -2,6 +2,7 @@
 
 import Hero from '@/components/site/Hero'
 import HowItWorks from '@/components/site/HowItWorks'
+import Demo from '@/components/site/Demo'
 import Rewards from '@/components/site/Rewards'
 import Stats from '@/components/site/Stats'
 import Testimonials from '@/components/site/Testimonials'
@@ -13,6 +14,7 @@ function App() {
     <div>
       <Hero />
       <HowItWorks />
+      <Demo />
       <Rewards />
       <Stats />
       <Testimonials />

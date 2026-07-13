@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Apple, ArrowRight } from 'lucide-react'
 import PhoneMockup from './PhoneMockup'
-import { SITE } from '@/lib/site'
+import { SITE, SCREENSHOTS } from '@/lib/site'
 
 export default function Hero() {
   return (
@@ -67,9 +67,10 @@ export default function Hero() {
         </div>
 
         <div className="relative flex items-end justify-center gap-3 md:justify-end" style={{ perspective: 1200 }}>
-          <PhoneMockup tone="light" delay={0.3} float="animate-floaty" className="z-10 -mr-6 hidden sm:block" />
-          <PhoneMockup tone="blue" delay={0.15} float="animate-floaty2" className="z-20 scale-110" />
-          <PhoneMockup tone="navy" delay={0.45} float="animate-floaty" className="z-10 -ml-6 hidden sm:block" />
+          <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-72 w-72 self-center rounded-full bg-gradient-to-tr from-[#116DFF]/30 to-[#3055CF]/20 blur-3xl" />
+          <PhoneMockup image={SCREENSHOTS.welcome} delay={0.3} float="animate-floaty" className="z-10 -mr-8 hidden sm:block" />
+          <PhoneMockup image={SCREENSHOTS.zone} delay={0.15} float="animate-floaty2" className="z-20 scale-105" />
+          <PhoneMockup image={SCREENSHOTS.rewards} delay={0.45} float="animate-floaty" className="z-10 -ml-8 hidden sm:block" />
         </div>
       </div>
 

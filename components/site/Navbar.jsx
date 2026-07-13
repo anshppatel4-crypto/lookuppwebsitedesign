@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, Heart } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { NAV_LINKS } from '@/lib/site'
+import { NAV_LINKS, SITE } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
 export default function Navbar() {
@@ -32,7 +32,7 @@ export default function Navbar() {
       >
         <nav className="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 sm:px-6">
           <Link href="/" className="flex items-center gap-2">
-            <span className="font-display text-2xl font-extrabold tracking-tight text-gradient-blue">Lookupp</span>
+            <img src={SITE.logo} alt="Lookupp" className="h-8 w-auto" />
           </Link>
 
           <div className="hidden items-center gap-1 md:flex">

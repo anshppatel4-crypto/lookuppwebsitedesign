@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-6xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <span className="font-display text-3xl font-extrabold">Lookupp</span>
+            <img src={SITE.logo} alt="Lookupp" className="h-9 w-auto brightness-0 invert" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
               A youth-led nonprofit rewarding people for being present with those they care about. People &gt; Screens.
             </p>

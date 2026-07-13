@@ -1,53 +1,25 @@
 'use client'
 
-import { useEffect } from "react";
-import Image from "next/image";
-import { HOME } from "@/lib/constants/testIds";
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await fetch('/api/');
-      const data = await response.json();
-      console.log(data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4"
-            alt="Emergent"
-            width={120}
-            height={120}
-          />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import Hero from '@/components/site/Hero'
+import HowItWorks from '@/components/site/HowItWorks'
+import Rewards from '@/components/site/Rewards'
+import Stats from '@/components/site/Stats'
+import Testimonials from '@/components/site/Testimonials'
+import Supporters from '@/components/site/Supporters'
+import ContactSection from '@/components/site/ContactSection'
 
 function App() {
   return (
-    <div className="App">
-      <Home />
+    <div>
+      <Hero />
+      <HowItWorks />
+      <Rewards />
+      <Stats />
+      <Testimonials />
+      <Supporters />
+      <ContactSection />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

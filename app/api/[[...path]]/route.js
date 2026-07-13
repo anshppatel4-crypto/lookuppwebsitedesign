@@ -2,7 +2,6 @@ import { MongoClient } from 'mongodb'
 import { v4 as uuidv4 } from 'uuid'
 import { NextResponse } from 'next/server'
 
-// MongoDB connection
 let client
 let db
 
@@ -15,7 +14,6 @@ async function connectToMongo() {
   return db
 }
 
-// Helper function to handle CORS
 function handleCORS(response) {
   response.headers.set('Access-Control-Allow-Origin', process.env.CORS_ORIGINS || '*')
   response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
@@ -24,12 +22,10 @@ function handleCORS(response) {
   return response
 }
 
-// OPTIONS handler for CORS
 export async function OPTIONS() {
   return handleCORS(new NextResponse(null, { status: 200 }))
 }
 
-// Route handler function
 async function handleRoute(request, { params }) {
   const { path = [] } = await params
   const route = `/${path.join('/')}`
@@ -38,65 +34,70 @@ async function handleRoute(request, { params }) {
   try {
     const db = await connectToMongo()
 
-    // Root endpoint - GET /api/root (since /api/ is not accessible with catch-all)
-    if (route === '/root' && method === 'GET') {
-      return handleCORS(NextResponse.json({ message: "Hello World" }))
-    }
-    // Root endpoint - GET /api/root (since /api/ is not accessible with catch-all)
-    if (route === '/' && method === 'GET') {
-      return handleCORS(NextResponse.json({ message: "Hello World" }))
+    if ((route === '/' || route === '/root') && method === 'GET') {
+      return handleCORS(NextResponse.json({ message: 'Lookupp API' }))
     }
 
-    // Status endpoints - POST /api/status
-    if (route === '/status' && method === 'POST') {
+    // Contact form submissions
+    if (route === '/contact' && method === 'POST') {
       const body = await request.json()
-      
-      if (!body.client_name) {
-        return handleCORS(NextResponse.json(
-          { error: "client_name is required" }, 
-          { status: 400 }
-        ))
+      if (!body.name || !body.email || !body.message) {
+        return handleCORS(NextResponse.json({ error: 'name, email and message are required' }, { status: 400 }))
       }
-
-      const statusObj = {
+      const doc = {
         id: uuidv4(),
-        client_name: body.client_name,
-        timestamp: new Date()
+        name: body.name,
+        email: body.email,
+        message: body.message,
+        createdAt: new Date(),
       }
-
-      await db.collection('status_checks').insertOne(statusObj)
-      return handleCORS(NextResponse.json(statusObj))
+      await db.collection('contact_submissions').insertOne(doc)
+      const { _id, ...clean } = doc
+      return handleCORS(NextResponse.json({ success: true, submission: clean }))
     }
 
-    // Status endpoints - GET /api/status
-    if (route === '/status' && method === 'GET') {
-      const statusChecks = await db.collection('status_checks')
-        .find({})
-        .limit(1000)
-        .toArray()
-
-      // Remove MongoDB's _id field from response
-      const cleanedStatusChecks = statusChecks.map(({ _id, ...rest }) => rest)
-      
-      return handleCORS(NextResponse.json(cleanedStatusChecks))
+    if (route === '/contact' && method === 'GET') {
+      const items = await db.collection('contact_submissions').find({}).sort({ createdAt: -1 }).limit(500).toArray()
+      return handleCORS(NextResponse.json(items.map(({ _id, ...r }) => r)))
     }
 
-    // Route not found
-    return handleCORS(NextResponse.json(
-      { error: `Route ${route} not found` }, 
-      { status: 404 }
-    ))
+    // Business inquiry submissions
+    if (route === '/business' && method === 'POST') {
+      const body = await request.json()
+      if (!body.businessName || !body.contactName || !body.email) {
+        return handleCORS(NextResponse.json({ error: 'businessName, contactName and email are required' }, { status: 400 }))
+      }
+      const doc = {
+        id: uuidv4(),
+        businessName: body.businessName,
+        contactName: body.contactName,
+        email: body.email,
+        phone: body.phone || '',
+        website: body.website || '',
+        address: body.address || '',
+        businessType: body.businessType || '',
+        description: body.description || '',
+        rewards: body.rewards || '',
+        notes: body.notes || '',
+        createdAt: new Date(),
+      }
+      await db.collection('business_submissions').insertOne(doc)
+      const { _id, ...clean } = doc
+      return handleCORS(NextResponse.json({ success: true, submission: clean }))
+    }
 
+    if (route === '/business' && method === 'GET') {
+      const items = await db.collection('business_submissions').find({}).sort({ createdAt: -1 }).limit(500).toArray()
+      return handleCORS(NextResponse.json(items.map(({ _id, ...r }) => r)))
+    }
+
+    return handleCORS(NextResponse.json({ error: `Route ${route} not found` }, { status: 404 }))
   } catch (error) {
     console.error('API Error:', error)
-    return handleCORS(NextResponse.json(
-      { error: "Internal server error" }, 
-      { status: 500 }
-    ))
+    return handleCORS(NextResponse.json({ error: 'Internal server error' }, { status: 500 }))
   }
 }
 
-// Export all HTTP methods
 export const GET = handleRoute
 export const POST = handleRoute
 export const PUT = handleRoute

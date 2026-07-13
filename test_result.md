@@ -101,3 +101,54 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "Production-quality redesigned Lookupp nonprofit website (Next.js). Backend must persist contact form and business inquiry form submissions to MongoDB."
+
+backend:
+  - task: "Contact form API (POST/GET /api/contact)"
+    implemented: true
+    working: true
+    file: "/app/app/api/[[...path]]/route.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "POST /api/contact stores {name,email,message} with uuid + createdAt into contact_submissions. Validates required fields (400 if missing). GET returns list without _id. Uses UUID, no ObjectID."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ All tests passed. POST /api/contact: (1) Valid data returns 200 with {success:true, submission:{...}} containing UUID id (2d1c7467-d08a-49d1-b548-276ed0ebe160), no _id field, all fields present, createdAt timestamp. (2) Missing required field returns 400 with error message. GET /api/contact: Returns 200 with array, no _id fields, all items have valid UUIDs, data persists correctly (verified submission from POST test is retrievable)."
+
+  - task: "Business inquiry API (POST/GET /api/business)"
+    implemented: true
+    working: true
+    file: "/app/app/api/[[...path]]/route.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "POST /api/business stores all business fields (businessName, contactName, email, phone, website, address, businessType, description, rewards, notes) with uuid + createdAt into business_submissions. Requires businessName, contactName, email (400 otherwise). GET returns list without _id."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ All tests passed. POST /api/business: (1) Valid data with all fields returns 200 with {success:true, submission:{...}} containing UUID id (825397b9-c593-4c98-8eae-da94af5e8b8b), no _id field, all 10 fields present (businessName, contactName, email, phone, website, address, businessType, description, rewards, notes), createdAt timestamp. (2) Missing required field (email) returns 400 with error message. GET /api/business: Returns 200 with array, no _id fields, all items have valid UUIDs, data persists correctly (verified submission from POST test is retrievable)."
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus: []
+  stuck_tasks: []
+  test_all: false
+  test_priority: "high_first"
+
+agent_communication:
+    -agent: "main"
+    -message: "Please test the two POST endpoints and their GET counterparts. Validate: (1) successful insert returns {success:true, submission:{...}} with a uuid id, (2) missing required fields returns 400, (3) GET returns array of stored docs without Mongo _id. Base URL is the ingress /api prefix."
+    -agent: "testing"
+    -message: "Backend testing complete. All 6 tests passed successfully. Both /api/contact and /api/business endpoints are working correctly: (1) POST with valid data returns 200 with UUID ids (not ObjectID), (2) POST with missing required fields returns 400, (3) GET returns arrays without _id fields, (4) Data persists correctly in MongoDB. No critical issues found. Backend is production-ready."

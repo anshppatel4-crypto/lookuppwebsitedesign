@@ -134,11 +134,14 @@ backend:
         -working: true
         -agent: "testing"
         -comment: "✅ All tests passed. POST /api/business: (1) Valid data with all fields returns 200 with {success:true, submission:{...}} containing UUID id (825397b9-c593-4c98-8eae-da94af5e8b8b), no _id field, all 10 fields present (businessName, contactName, email, phone, website, address, businessType, description, rewards, notes), createdAt timestamp. (2) Missing required field (email) returns 400 with error message. GET /api/business: Returns 200 with array, no _id fields, all items have valid UUIDs, data persists correctly (verified submission from POST test is retrievable)."
+        -working: true
+        -agent: "testing"
+        -comment: "✅ All tests passed with NEW field set. POST /api/business: (1) Valid data with NEW fields {firstName, lastName, business, email, phone, reward, businessName, contactName} returns 200 with {success:true, submission:{...}} containing UUID id (b65ae3e8-0959-4573-8bc2-605b0888e572), no _id field, all 8 submitted fields present and correctly stored, createdAt timestamp. (2) Missing email returns 400 with error message. (3) Missing both business AND businessName returns 400 with error message. GET /api/business: Returns 200 with array of 3 items, no _id fields in any items, all items have valid UUIDs, data persists correctly (verified submission from POST test is retrievable with correct field values). Validation logic correctly requires email AND (business OR businessName)."
 
 metadata:
   created_by: "main_agent"
   version: "1.0"
-  test_sequence: 1
+  test_sequence: 2
   run_ui: false
 
 test_plan:
@@ -150,5 +153,9 @@ test_plan:
 agent_communication:
     -agent: "main"
     -message: "Please test the two POST endpoints and their GET counterparts. Validate: (1) successful insert returns {success:true, submission:{...}} with a uuid id, (2) missing required fields returns 400, (3) GET returns array of stored docs without Mongo _id. Base URL is the ingress /api prefix."
+    -agent: "main"
+    -message: "RETEST /api/business only. It now accepts the new field set {firstName,lastName,business,email,phone,reward, businessName, contactName}. Validation: requires email AND (business OR businessName) else 400. It stores the FULL body plus uuid id + createdAt. Verify: valid POST returns 200 {success:true, submission with uuid + submitted fields}; POST missing email returns 400; POST missing business/businessName returns 400; GET /api/business returns array without _id including the new doc. Contact endpoint unchanged."
     -agent: "testing"
     -message: "Backend testing complete. All 6 tests passed successfully. Both /api/contact and /api/business endpoints are working correctly: (1) POST with valid data returns 200 with UUID ids (not ObjectID), (2) POST with missing required fields returns 400, (3) GET returns arrays without _id fields, (4) Data persists correctly in MongoDB. No critical issues found. Backend is production-ready."
+    -agent: "testing"
+    -message: "Backend testing complete (test_sequence: 2). All 7 tests passed successfully. /api/business endpoint tested with NEW field set {firstName, lastName, business, email, phone, reward, businessName, contactName}: (1) POST with valid data returns 200 with UUID id (b65ae3e8-0959-4573-8bc2-605b0888e572), all 8 fields stored correctly, no _id field, (2) POST missing email returns 400, (3) POST missing both business and businessName returns 400, (4) GET returns array without _id fields. Regression tests for /api/contact: (5) POST valid returns 200 with UUID, (6) POST missing field returns 400, (7) GET returns array without _id. No 500 errors or serialization issues. Backend is production-ready."

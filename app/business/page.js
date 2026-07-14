@@ -6,16 +6,16 @@ import { Reveal } from '@/components/site/motion'
 import BusinessForm from '@/components/site/BusinessForm'
 
 const BENEFITS = [
-  { icon: Users, title: 'Reach Gen Z locally', desc: 'Get in front of engaged young people right in your community who are actively looking to connect in person.' },
-  { icon: TrendingUp, title: 'Drive real foot traffic', desc: 'Turn screen-free moments into visits. Reward presence and watch new customers walk through your door.' },
-  { icon: HeartHandshake, title: 'Support a good cause', desc: 'Align your brand with a youth-led movement promoting healthier digital habits and stronger relationships.' },
+  { icon: Users, title: 'Brand Visibility', desc: 'Improve brand visibility by reaching younger demographics (primarily ages 13–21).' },
+  { icon: HeartHandshake, title: 'Brand Reputation', desc: 'Improve brand reputation by associating with a movement to improve mental health.' },
+  { icon: TrendingUp, title: 'Increased Revenue', desc: 'Increase revenue through improving product distribution and marketing.' },
 ]
 
 export default function BusinessPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden py-24 sm:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f7f9ff] to-[#eef3ff] py-24 sm:py-28">
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="absolute -left-20 top-10 h-80 w-80 rounded-full bg-[#116DFF]/15 blur-3xl animate-blob" />
           <div className="absolute right-0 top-24 h-96 w-96 rounded-full bg-[#3055CF]/15 blur-3xl animate-blob" style={{ animationDelay: '4s' }} />

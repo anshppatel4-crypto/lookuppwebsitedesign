@@ -43,12 +43,12 @@ export default function AboutPage() {
       <section className="bg-[#f6f7fb] py-24">
         <div className="mx-auto max-w-5xl px-6">
           <Reveal className="text-center">
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#3055CF]">Our Team</span>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#3055CF]">The Board</span>
             <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-[#16163F] sm:text-5xl">
-              The people behind Lookupp
+              Meet the Board
             </h2>
           </Reveal>
-          <div className="mx-auto mt-14 grid max-w-2xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-14 grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {TEAM.map((m, i) => (
               <motion.div
                 key={m.name}

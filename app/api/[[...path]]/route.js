@@ -64,23 +64,10 @@ async function handleRoute(request, { params }) {
     // Business inquiry submissions
     if (route === '/business' && method === 'POST') {
       const body = await request.json()
-      if (!body.businessName || !body.contactName || !body.email) {
-        return handleCORS(NextResponse.json({ error: 'businessName, contactName and email are required' }, { status: 400 }))
+      if (!body.email || !(body.business || body.businessName)) {
+        return handleCORS(NextResponse.json({ error: 'business and email are required' }, { status: 400 }))
       }
-      const doc = {
-        id: uuidv4(),
-        businessName: body.businessName,
-        contactName: body.contactName,
-        email: body.email,
-        phone: body.phone || '',
-        website: body.website || '',
-        address: body.address || '',
-        businessType: body.businessType || '',
-        description: body.description || '',
-        rewards: body.rewards || '',
-        notes: body.notes || '',
-        createdAt: new Date(),
-      }
+      const doc = { id: uuidv4(), ...body, createdAt: new Date() }
       await db.collection('business_submissions').insertOne(doc)
       const { _id, ...clean } = doc
       return handleCORS(NextResponse.json({ success: true, submission: clean }))

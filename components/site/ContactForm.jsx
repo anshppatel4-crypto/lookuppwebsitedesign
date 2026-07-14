@@ -22,23 +22,21 @@ export default function ContactForm() {
     }
     setLoading(true)
     try {
+      // Save a copy in our database (backup so nothing is ever lost).
       await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       })
 
-      const sid = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-      const tid = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-      const pk = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      if (sid && tid && pk) {
-        const emailjs = (await import('@emailjs/browser')).default
-        await emailjs.send(
-          sid,
-          tid,
-          { from_name: form.name, from_email: form.email, message: form.message, to_email: 'team@lookupp.net' },
-          { publicKey: pk }
-        )
+      // Send the email via Formspree (delivers to team@lookupp.net).
+      const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ENDPOINT
+      if (endpoint) {
+        await fetch(endpoint, {
+          method: 'POST',
+          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: form.name, email: form.email, message: form.message, _subject: `New contact form message from ${form.name}` }),
+        })
       }
 
       toast.success("Thanks for reaching out! We'll be in touch soon.")

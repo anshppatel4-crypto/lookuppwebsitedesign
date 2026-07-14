@@ -18,9 +18,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05 }}
-            className="font-display text-6xl font-extrabold leading-[0.95] tracking-tight text-[#16163F] sm:text-7xl"
+            className="font-display"
           >
-            <span className="text-gradient-blue">Lookupp</span>
+            <img src={SITE.logo} alt="Lookupp" className="h-14 w-auto sm:h-20" />
           </motion.h1>
 
           <motion.p

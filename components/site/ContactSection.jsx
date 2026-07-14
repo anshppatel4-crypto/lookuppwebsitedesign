@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, Instagram } from 'lucide-react'
+import { Mail, Phone, Instagram, Linkedin } from 'lucide-react'
 import ContactForm from './ContactForm'
 import { Reveal } from './motion'
 import { SITE } from '@/lib/site'
@@ -11,9 +11,10 @@ export default function ContactSection() {
     { icon: Mail, label: 'Email', value: SITE.email, href: `mailto:${SITE.email}` },
     { icon: Phone, label: 'Phone', value: SITE.phone, href: SITE.phoneHref },
     { icon: Instagram, label: 'Instagram', value: SITE.instagramHandle, href: SITE.instagram },
+    { icon: Linkedin, label: 'LinkedIn', value: 'Lookupp', href: SITE.linkedin },
   ]
   return (
-    <section id="contact" className="relative overflow-hidden py-24">
+    <section id="contact" className="relative overflow-hidden bg-gradient-to-b from-white via-[#eef3ff] to-[#f6f7fb] py-24">
       <div className="pointer-events-none absolute -left-20 bottom-10 h-80 w-80 rounded-full bg-[#3055CF]/10 blur-3xl" />
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 lg:grid-cols-2">
@@ -31,7 +32,7 @@ export default function ContactSection() {
                 <a
                   key={it.label}
                   href={it.href}
-                  target={it.label === 'Instagram' ? '_blank' : undefined}
+                  target={it.label === 'Instagram' || it.label === 'LinkedIn' ? '_blank' : undefined}
                   rel="noreferrer"
                   className="flex items-center gap-4 rounded-2xl border border-[#eef0f7] bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-lg"
                 >

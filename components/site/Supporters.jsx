@@ -11,7 +11,7 @@ export default function Supporters({ compact = false }) {
         <Reveal className="text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-[#3055CF]">Recognitions &amp; Supporters</span>
           <h2 className="mt-3 font-display text-3xl font-extrabold tracking-tight text-[#16163F] sm:text-4xl">
-            Backed by people who believe in presence
+            Backed by:
           </h2>
         </Reveal>
 

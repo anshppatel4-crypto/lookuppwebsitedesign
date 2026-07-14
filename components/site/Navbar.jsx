@@ -72,7 +72,9 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2">
             <Link
-              href="/donate"
+              href={SITE.donate}
+              target="_blank"
+              rel="noreferrer"
               className="group hidden items-center gap-2 rounded-full bg-gradient-to-r from-[#116DFF] to-[#3055CF] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#3055CF]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(48,85,207,0.6)] sm:flex"
             >
               <Heart className="h-4 w-4 fill-white/30" /> Donate
@@ -125,7 +127,9 @@ export default function Navbar() {
               ))}
               <motion.div variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }} className="mt-4 w-full max-w-sm">
                 <Link
-                  href="/donate"
+                  href={SITE.donate}
+                  target="_blank"
+                  rel="noreferrer"
                   className="flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#116DFF] to-[#3055CF] px-6 py-5 text-xl font-semibold text-white shadow-lg shadow-[#3055CF]/30"
                 >
                   <Heart className="h-5 w-5 fill-white/30" /> Donate

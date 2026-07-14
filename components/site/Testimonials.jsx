@@ -32,13 +32,12 @@ export default function Testimonials() {
         <Reveal className="text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-[#3055CF]">Testimonials</span>
           <h2 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-[#16163F] sm:text-5xl">
-            Loved by real people
+            Loved by real users
           </h2>
         </Reveal>
 
         <div className="relative mt-14">
-          <div className="relative min-h-[280px] overflow-hidden rounded-[2rem] border border-white bg-white p-10 shadow-[0_30px_80px_-40px_rgba(48,85,207,0.4)] sm:p-14">
-            <Quote className="absolute right-8 top-8 h-16 w-16 text-[#3055CF]/8" />
+          <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden rounded-[2rem] border border-white bg-white p-8 shadow-[0_30px_80px_-40px_rgba(48,85,207,0.4)] sm:min-h-[240px] sm:p-14">
             <AnimatePresence mode="wait" custom={dir}>
               <motion.div
                 key={i}
@@ -47,21 +46,12 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: dir * -60 }}
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="w-full"
               >
-                <p className="font-display text-2xl font-semibold leading-snug text-[#16163F] sm:text-3xl">
-                  “{t.quote}”
+                <Quote className="mx-auto mb-5 h-9 w-9 text-[#3055CF]/25" />
+                <p className="text-center font-display text-xl font-semibold leading-snug text-[#16163F] sm:text-3xl">
+                  &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="mt-8 flex items-center gap-4">
-                  <img
-                    src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${t.seed}&radius=50`}
-                    alt={t.name}
-                    className="h-14 w-14 rounded-full border-2 border-[#3055CF]/20 bg-[#eef1fb]"
-                  />
-                  <div>
-                    <div className="font-semibold text-[#16163F]">{t.name}</div>
-                    <div className="text-sm text-[#16163F]/50">{t.role}</div>
-                  </div>
-                </div>
               </motion.div>
             </AnimatePresence>
           </div>

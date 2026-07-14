@@ -21,7 +21,7 @@ export default function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white/50">Quick Links</h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li><Link href="/donate" className="text-white/80 transition hover:text-white">Donate</Link></li>
+              <li><a href={SITE.donate} target="_blank" rel="noreferrer" className="text-white/80 transition hover:text-white">Donate</a></li>
               <li><Link href="/business" className="text-white/80 transition hover:text-white">Business Portal</Link></li>
               <li><Link href="/about" className="text-white/80 transition hover:text-white">About</Link></li>
               <li><Link href="/contact" className="text-white/80 transition hover:text-white">Contact</Link></li>
@@ -47,12 +47,14 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-            <Link
-              href="/donate"
+            <a
+              href={SITE.donate}
+              target="_blank"
+              rel="noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#116DFF] to-[#3055CF] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#3055CF]/30 transition hover:-translate-y-0.5"
             >
               <Heart className="h-4 w-4 fill-white/30" /> Support Lookupp
-            </Link>
+            </a>
           </div>
         </div>
 

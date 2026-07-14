@@ -85,8 +85,7 @@ export default function AboutPage() {
                   Become a Lookupp Ambassador
                 </h2>
                 <p className="mt-4 text-lg text-white/80">
-                  Are you a student who believes in presence over screens? Join our youth-led movement,
-                  bring Lookupp to your community, and help friends reconnect in real life.
+                  Want to bring Lookupp to your community? Join the movement and apply to be an ambassador!
                 </p>
                 <a
                   href={SITE.ambassadorForm}

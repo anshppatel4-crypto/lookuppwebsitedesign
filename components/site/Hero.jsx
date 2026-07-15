@@ -61,8 +61,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* soft organic transition into next section */}
-      <Wave fill="#f6f7fb" variant={1} height={130} />
     </section>
   )
 }

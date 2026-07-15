@@ -37,7 +37,6 @@ export default function HowItWorks() {
           ))}
         </div>
       </div>
-      <Wave fill="#16163F" variant={2} height={130} />
     </section>
   )
 }

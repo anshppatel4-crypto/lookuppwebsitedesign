@@ -76,7 +76,6 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
-      <Wave fill="#ffffff" variant={2} height={130} />
     </section>
   )
 }

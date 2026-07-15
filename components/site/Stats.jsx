@@ -5,7 +5,7 @@ import { Wave } from './Flow'
 
 export default function Stats() {
   return (
-    <section className="relative overflow-hidden bg-[#16163F] py-28">
+    <section className="relative overflow-hidden bg-[#16163F] py-24">
       <div className="pointer-events-none absolute -left-20 top-0 h-80 w-80 rounded-full bg-[#3055CF]/40 blur-3xl animate-blob" />
       <div className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-[#116DFF]/30 blur-3xl animate-blob" style={{ animationDelay: '4s' }} />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
@@ -30,7 +30,6 @@ export default function Stats() {
           of screen-free, face-to-face interaction.
         </motion.h2>
       </div>
-      <Wave fill="#f6f7fb" variant={1} height={130} />
     </section>
   )
 }

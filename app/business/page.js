@@ -38,7 +38,7 @@ export default function BusinessPage() {
             className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-[#16163F]/70"
           >
             Reward your community for being present. Offer perks to Lookupp users who put their phones
-            away and show up in real life — and turn meaningful moments into loyal customers.
+            away and show up in real life.
           </motion.p>
         </div>
       </section>

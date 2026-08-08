@@ -138,6 +138,19 @@ backend:
         -agent: "testing"
         -comment: "✅ All tests passed with NEW field set. POST /api/business: (1) Valid data with NEW fields {firstName, lastName, business, email, phone, reward, businessName, contactName} returns 200 with {success:true, submission:{...}} containing UUID id (b65ae3e8-0959-4573-8bc2-605b0888e572), no _id field, all 8 submitted fields present and correctly stored, createdAt timestamp. (2) Missing email returns 400 with error message. (3) Missing both business AND businessName returns 400 with error message. GET /api/business: Returns 200 with array of 3 items, no _id fields in any items, all items have valid UUIDs, data persists correctly (verified submission from POST test is retrievable with correct field values). Validation logic correctly requires email AND (business OR businessName)."
 
+frontend:
+  - task: "Hero phone screenshots show Welcome, Tap-to-start (Start a Lookupp Zone), and updated Rewards"
+    implemented: true
+    working: "NA"
+    file: "/app/components/site/Hero.jsx, /app/lib/site.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        -working: "NA"
+        -agent: "main"
+        -comment: "Updated SCREENSHOTS.welcome/start/rewards to new uploaded assets and set the three hero phones to welcome (left), start=Tap-to-start (center), rewards (right). Verify all three images inside the hero phone mockups render (HTTP 200, naturalWidth>0)."
+
 metadata:
   created_by: "main_agent"
   version: "1.0"

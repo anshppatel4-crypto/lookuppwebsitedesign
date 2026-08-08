@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import { Reveal } from '@/components/site/motion'
-import Supporters from '@/components/site/Supporters'
 import { TEAM, SITE } from '@/lib/site'
 
 export default function AboutPage() {
@@ -101,10 +100,6 @@ export default function AboutPage() {
           </Reveal>
         </div>
       </section>
-
-      <div className="bg-[#f6f7fb]">
-        <Supporters compact />
-      </div>
     </div>
   )
 }

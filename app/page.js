@@ -4,6 +4,7 @@ import Hero from '@/components/site/Hero'
 import HowItWorks from '@/components/site/HowItWorks'
 import Stats from '@/components/site/Stats'
 import Testimonials from '@/components/site/Testimonials'
+import Supporters from '@/components/site/Supporters'
 import ContactSection from '@/components/site/ContactSection'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <HowItWorks />
       <Stats />
       <Testimonials />
+      <Supporters />
       <ContactSection />
     </div>
   )

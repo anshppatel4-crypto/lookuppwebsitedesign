@@ -17,13 +17,16 @@ export default function Supporters({ compact = false }) {
 
         <div className="mt-14 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-5">
           {SUPPORTERS.map((s, idx) => (
-            <motion.div
+            <motion.a
               key={s.name}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group flex h-28 items-center justify-center rounded-2xl border border-[#eef0f7] bg-white p-5 shadow-sm transition hover:shadow-lg"
+              className="group flex h-28 items-center justify-center rounded-2xl border border-[#eef0f7] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <img
                 src={s.src}
@@ -31,7 +34,7 @@ export default function Supporters({ compact = false }) {
                 className="max-h-16 w-auto object-contain opacity-70 grayscale transition duration-300 group-hover:opacity-100 group-hover:grayscale-0"
                 loading="lazy"
               />
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

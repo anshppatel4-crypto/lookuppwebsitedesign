@@ -18,11 +18,9 @@ export default function PhoneMockup({ className = '', image, alt = 'Lookupp app 
       style={{ perspective: 1000 }}
     >
       <div className="relative w-[200px] h-[420px] rounded-[2.8rem] bg-[#0f0f2e] p-[8px] shadow-[0_40px_80px_-30px_rgba(22,22,63,0.6)] ring-1 ring-white/10">
-        {/* notch */}
-        <div className="absolute left-1/2 top-[16px] z-20 h-[24px] w-[84px] -translate-x-1/2 rounded-full bg-[#0f0f2e]" />
         <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2.25rem] bg-white">
           {image ? (
-            <img src={image} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+            <img src={image} alt={alt} loading="lazy" className="h-full w-full object-contain" />
           ) : (
             <div className={`flex h-full w-full items-center justify-center bg-gradient-to-br ${screens[tone]}`}>
               {label && (

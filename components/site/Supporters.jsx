@@ -15,7 +15,7 @@ export default function Supporters({ compact = false }) {
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-2 items-center gap-6 sm:grid-cols-3 md:grid-cols-5">
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-6">
           {SUPPORTERS.map((s, idx) => (
             <motion.a
               key={s.name}
@@ -26,7 +26,7 @@ export default function Supporters({ compact = false }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group flex h-28 items-center justify-center rounded-2xl border border-[#eef0f7] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+              className="group flex h-28 w-[calc(50%-0.75rem)] items-center justify-center rounded-2xl border border-[#eef0f7] bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-lg sm:w-[calc(33.333%-1rem)] md:w-[calc(20%-1.2rem)]"
             >
               <img
                 src={s.src}

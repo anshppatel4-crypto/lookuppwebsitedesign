@@ -41,19 +41,29 @@ export default function RootLayout({ children }) {
         <Providers>
 
           {/* Ambassador Banner */}
-          <div className="w-full bg-[#116DFF] text-white text-center py-2 px-4 fixed top-0 left-0 right-0 z-[60]">
+          <div className="fixed top-0 left-0 right-0 z-[60] flex justify-center">
             <a
-              href="https://your-ambassador-form-link.com"
-              className="font-medium hover:underline"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form"
+              className="
+                bg-[#116DFF]
+                text-white
+                text-sm sm:text-base
+                font-semibold
+                py-2.5 px-6
+                rounded-b-xl
+                shadow-md
+                hover:bg-[#0f5fe0]
+                transition-colors
+              "
             >
-              Bring Lookupp to your Community
+              Bring Lookupp to Your Community
             </a>
           </div>
 
           <Navbar />
 
-          {/* Increased padding so banner + navbar don't overlap content */}
-          <main className="pt-[120px]">
+          {/* Extra padding for banner + navbar */}
+          <main className="pt-[140px]">
             {children}
           </main>
 
@@ -65,3 +75,5 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+        

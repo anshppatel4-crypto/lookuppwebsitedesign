@@ -29,14 +29,37 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{__html:'window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);'}} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);',
+          }}
+        />
       </head>
+
       <body suppressHydrationWarning>
         <Providers>
+
+          {/* Ambassador Banner */}
+          <div className="w-full bg-[#116DFF] text-white text-center py-2 px-4 fixed top-0 left-0 right-0 z-[60]">
+            <a
+              href="https://your-ambassador-form-link.com"
+              className="font-medium hover:underline"
+            >
+              Bring Lookupp to your Community
+            </a>
+          </div>
+
           <Navbar />
-          <main className="pt-[84px]">{children}</main>
+
+          {/* Increased padding so banner + navbar don't overlap content */}
+          <main className="pt-[120px]">
+            {children}
+          </main>
+
           <Footer />
           <Toaster position="top-center" richColors />
+
         </Providers>
       </body>
     </html>

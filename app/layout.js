@@ -39,10 +39,12 @@ export default function RootLayout({ children }) {
 
       <body suppressHydrationWarning>
         <Providers>
+
           <Navbar />
 
-          {/* Curved Connected Banner */}
-          <div className="relative w-full flex justify-center">
+          {/* SAGGING BANNER BELOW NAVBAR */}
+          <div className="relative w-full flex justify-center mt-[20px]">
+            
             {/* Curved background */}
             <div
               className="
@@ -50,29 +52,30 @@ export default function RootLayout({ children }) {
                 top-0
                 left-0
                 right-0
-                h-[90px]
-                bg-gradient-to-b from-[#ffffffcc] to-[#f2f6ffcc]
+                h-[110px]
+                bg-gradient-to-b from-[#ffffffcc] to-[#eef2ffcc]
                 backdrop-blur-md
-                border-t border-[#e0e4f0]
+                border-t border-[#d9ddee]
                 shadow-[0_4px_12px_rgba(0,0,0,0.08)]
-                rounded-b-[100px]
-                z-[40]
+                rounded-b-[120px]
+                z-[30]
               "
             ></div>
 
             {/* Text + Button */}
-            <div className="relative mt-[25px] flex flex-col items-center space-y-2">
-              <p className="text-[#3055CF] font-semibold text-lg sm:text-xl tracking-wide">
+            <div className="relative mt-[35px] flex flex-col items-center space-y-3 z-[40]">
+              <p className="text-[#3055CF] font-bold text-2xl sm:text-3xl tracking-wide">
                 Bring Lookupp to Your Community
               </p>
+
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form"
                 className="
                   bg-[#3055CF]
                   text-white
-                  font-medium
-                  text-sm sm:text-base
-                  py-2.5 px-6
+                  font-semibold
+                  text-base sm:text-lg
+                  py-3 px-8
                   rounded-full
                   shadow-md
                   hover:bg-[#2748b3]
@@ -85,13 +88,14 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
-          {/* Adjust padding since banner sits below navbar */}
-          <main className="pt-[140px]">
+          {/* Push content down so banner doesn't overlap */}
+          <main className="pt-[180px]">
             {children}
           </main>
 
           <Footer />
           <Toaster position="top-center" richColors />
+
         </Providers>
       </body>
     </html>

@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
         <Providers>
           <Navbar />
 
-          {/* Sagging Ambassador Banner */}
+          {/* Curved Banner Below Navbar */}
           <div className="relative w-full flex justify-center">
             <div
               className="
@@ -49,26 +49,24 @@ export default function RootLayout({ children }) {
                 top-0
                 left-0
                 right-0
-                h-[70px]
-                bg-gradient-to-b from-[#ffffffcc] to-[#f5f7ffcc]
-                backdrop-blur-md
-                border-t border-[#e0e4f0]
+                h-[80px]
+                bg-gradient-to-b from-[#f8faff] to-[#e9f0ff]
                 shadow-[0_4px_12px_rgba(0,0,0,0.08)]
-                rounded-b-[50%]
+                rounded-b-[60%]
                 z-[40]
               "
             ></div>
 
-            <div className="relative mt-[10px] flex justify-center">
+            <div className="relative mt-[20px] flex justify-center">
               <a
                 href='https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form'
                 className="
                   bg-[#3055CF]
                   text-white
-                  font-semibold
+                  font-medium
                   tracking-wide
-                  text-sm sm:text-base
-                  py-2.5 px-6
+                  text-base
+                  py-3 px-8
                   rounded-full
                   shadow-md
                   hover:bg-[#2748b3]
@@ -82,7 +80,7 @@ export default function RootLayout({ children }) {
           </div>
 
           {/* Adjust padding since banner sits below navbar */}
-          <main className="pt-[120px]">
+          <main className="pt-[130px]">
             {children}
           </main>
 

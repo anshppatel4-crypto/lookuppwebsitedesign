@@ -41,23 +41,26 @@ export default function RootLayout({ children }) {
         <Providers>
 
           {/* Ambassador Banner */}
-          <div className="fixed top-0 left-0 right-0 z-[60] flex justify-center">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form"
-              className="
-                bg-[#116DFF]
-                text-white
-                text-sm sm:text-base
-                font-semibold
-                py-2.5 px-6
-                rounded-b-xl
-                shadow-md
-                hover:bg-[#0f5fe0]
-                transition-colors
-              "
-            >
-              Bring Lookupp to Your Community
-            </a>
+          <div className="fixed top-0 left-0 right-0 z-[60] w-full bg-[#E8F0FE] border-b border-[#D0DAE8]">
+            <div className="max-w-6xl mx-auto flex items-center justify-center py-3 px-4">
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form"
+                className="
+                  bg-[#3A63D9]
+                  text-white
+                  font-semibold
+                  text-sm sm:text-base
+                  py-2.5 px-6
+                  rounded-lg
+                  shadow-sm
+                  hover:bg-[#2f55c4]
+                  transition-all
+                  duration-200
+                "
+              >
+                Bring Lookupp to Your Community
+              </a>
+            </div>
           </div>
 
           <Navbar />
@@ -75,5 +78,4 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-
 

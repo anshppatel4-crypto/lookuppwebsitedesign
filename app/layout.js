@@ -40,22 +40,27 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         <Providers>
 
-          {/* Ambassador Banner */}
-          <div className="fixed top-0 left-0 right-0 z-[60] w-full bg-[#E8F0FE] border-b border-[#D0DAE8]">
-            <div className="max-w-6xl mx-auto flex items-center justify-center py-3 px-4">
+          <Navbar />
+
+          {/* Glassy Ambassador Banner BELOW NAVBAR */}
+          <div className="w-full flex justify-center mt-4">
+            <div className="
+              backdrop-blur-md
+              bg-white/60
+              border border-white/40
+              shadow-lg
+              rounded-xl
+              px-6 py-3
+              flex items-center justify-center
+            ">
               <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form"
                 className="
-                  bg-[#3A63D9]
-                  text-white
+                  text-[#3055CF]
                   font-semibold
                   text-sm sm:text-base
-                  py-2.5 px-6
-                  rounded-lg
-                  shadow-sm
-                  hover:bg-[#2f55c4]
-                  transition-all
-                  duration-200
+                  hover:text-[#1f3ea8]
+                  transition-colors
                 "
               >
                 Bring Lookupp to Your Community
@@ -63,10 +68,8 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
-          <Navbar />
-
-          {/* Extra padding for banner + navbar */}
-          <main className="pt-[140px]">
+          {/* Adjust padding since banner is BELOW navbar */}
+          <main className="pt-[40px]">
             {children}
           </main>
 
@@ -78,4 +81,3 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-

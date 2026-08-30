@@ -39,28 +39,41 @@ export default function RootLayout({ children }) {
 
       <body suppressHydrationWarning>
         <Providers>
-
           <Navbar />
 
-          {/* Glassy Ambassador Banner BELOW NAVBAR */}
-          <div className="w-full flex justify-center mt-4">
-            <div className="
-              backdrop-blur-md
-              bg-white/60
-              border border-white/40
-              shadow-lg
-              rounded-xl
-              px-6 py-3
-              flex items-center justify-center
-            ">
+          {/* Sagging Ambassador Banner */}
+          <div className="relative w-full flex justify-center">
+            <div
+              className="
+                absolute
+                top-0
+                left-0
+                right-0
+                h-[70px]
+                bg-gradient-to-b from-[#ffffffcc] to-[#f5f7ffcc]
+                backdrop-blur-md
+                border-t border-[#e0e4f0]
+                shadow-[0_4px_12px_rgba(0,0,0,0.08)]
+                rounded-b-[50%]
+                z-[40]
+              "
+            ></div>
+
+            <div className="relative mt-[10px] flex justify-center">
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form"
+                href='https://docs.google.com/forms/d/e/1FAIpQLSepbxcS2tIcjpWGB9o9PaGBjKm5pvsjW3r4XQbiD_B1rV3c9g/viewform?usp=send_form'
                 className="
-                  text-[#3055CF]
+                  bg-[#3055CF]
+                  text-white
                   font-semibold
+                  tracking-wide
                   text-sm sm:text-base
-                  hover:text-[#1f3ea8]
-                  transition-colors
+                  py-2.5 px-6
+                  rounded-full
+                  shadow-md
+                  hover:bg-[#2748b3]
+                  transition-all
+                  duration-200
                 "
               >
                 Bring Lookupp to Your Community
@@ -68,14 +81,13 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
-          {/* Adjust padding since banner is BELOW navbar */}
-          <main className="pt-[40px]">
+          {/* Adjust padding since banner sits below navbar */}
+          <main className="pt-[120px]">
             {children}
           </main>
 
           <Footer />
           <Toaster position="top-center" richColors />
-
         </Providers>
       </body>
     </html>

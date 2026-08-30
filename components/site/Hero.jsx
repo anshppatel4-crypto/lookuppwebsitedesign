@@ -1,66 +1,58 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Apple, ArrowRight } from 'lucide-react'
 import PhoneMockup from './PhoneMockup'
-import { SITE, SCREENSHOTS } from '@/lib/site'
-import { Wave, ParallaxBlob } from './Flow'
 
 export default function Hero() {
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-[#f7f9ff] to-[#eef3ff]">
-      {/* clean soft background */}
+    return (
+          >section className="relative w-full overflow-hidden bg-gradient-to-b from-[#f3f6ff] via-[#f7f9ff] to-[#eef3ff]">
+            >div className="mx-auto max-w-7xl px-4 pt-6 pb-16 sm:px-6 md:pt-12 lg:px-8">
+              >div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-16">
 
-      <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-6 pb-28 pt-6 md:grid-cols-2 md:pt-12">
-        <div>
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+                >motion.div
+              initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.05 }}
-            className="font-display"
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left"
           >
-            <img src={SITE.logo} alt="Lookupp" className="h-14 w-auto sm:h-20" />
-          </motion.h1>
+                          >h1 className="text-4xl font-bold tracking-tight text-[#16163F] sm:text-5xl md:text-6xl leading-tight">
+                            People{' '}
+              >span className="text-[#3055CF]">&gt;>/span>{' '}
+              Screens
+            >/h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-5 max-w-md text-lg leading-relaxed text-[#16163F]/70"
+            >p className="mt-6 max-w-lg text-lg text-[#16163F]/60 leading-relaxed">
+                              Lookupp rewards real-world connections and helps youth build healthier
+              digital habits  one face-to-face interaction at a time.
+                            >/p>
+
+            >div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                              >a
+                href="#download"
+                className="rounded-full bg-gradient-to-r from-[#116DFF] to-[#3055CF] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#3055CF]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(48,85,207,0.5)]"
+              >
+                                  Download Today
+              >/a>
+              >a
+                href="#learn-more"
+                className="rounded-full border border-[#16163F]/15 bg-white/60 px-8 py-3.5 text-base font-semibold text-[#16163F] backdrop-blur-sm transition-all duration-300 hover:bg-white/80"
+              >
+                                  Learn more
+              >/a>
+            >/div>
+          >/motion.div>
+
+          >motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-1 items-center justify-center"
           >
-            Rewarding users for being present with the people they care about.
-          </motion.p>
+                          >PhoneMockup />
+                        >/motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25 }}
-            className="mt-8 flex flex-wrap items-center gap-4"
-          >
-            <a
-              href={SITE.appStore}
-              target="_blank"
-              rel="noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#116DFF] to-[#3055CF] px-7 py-4 text-base font-semibold text-white shadow-xl shadow-[#3055CF]/30 transition hover:-translate-y-0.5 hover:shadow-2xl"
-            >
-              <Apple className="h-5 w-5" /> Download Today
-              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-            </a>
-            <Link href="/about" className="inline-flex items-center gap-2 rounded-full border border-[#16163F]/15 bg-white/60 px-6 py-4 text-base font-semibold text-[#16163F] backdrop-blur transition hover:bg-white">
-              Learn more
-            </Link>
-          </motion.div>
-        </div>
-
-        <div className="relative flex items-end justify-center gap-3 md:justify-end" style={{ perspective: 1200 }}>
-          <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-72 w-72 self-center rounded-full bg-gradient-to-tr from-[#116DFF]/30 to-[#3055CF]/20 blur-3xl" />
-          <PhoneMockup image={SCREENSHOTS.start} delay={0.3} float="" className="z-10 -mr-8 hidden sm:block" />
-          <PhoneMockup image={SCREENSHOTS.welcome} delay={0.15} float="" className="z-20 scale-105" />
-          <PhoneMockup image={SCREENSHOTS.rewards} delay={0.45} float="" className="z-10 -ml-8 hidden sm:block" />
-        </div>
-      </div>
-
-    </section>
+        >/div>
+      >/div>
+    >/section>
   )
 }

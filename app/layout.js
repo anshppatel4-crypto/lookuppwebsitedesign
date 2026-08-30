@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
                     >div
             className="
                             w-full
-              pt-[82px] sm:pt-[90px]
+              pt-8 sm:pt-10
               pb-10
               flex
               flex-col
@@ -56,8 +56,7 @@ export default function RootLayout({ children }) {
             "
                         >
                           >p
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-              className="text-[#3055CF] font-semibold text-4xl sm:text-5xl md:text-6xl tracking-tight px-6 max-w-4xl leading-tight"
+              className="font-display text-[#3055CF] font-bold text-4xl sm:text-5xl md:text-6xl tracking-tight px-6 max-w-4xl leading-tight"
             >
                               Bring Lookupp to Your Community
             >/p>

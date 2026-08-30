@@ -39,12 +39,10 @@ export default function RootLayout({ children }) {
 
       <body suppressHydrationWarning>
         <Providers>
-
           <Navbar />
 
-          {/* SAGGING BANNER BELOW NAVBAR */}
-          <div className="relative w-full flex justify-center mt-[20px]">
-            
+          {/* Lower, visible curved banner */}
+          <div className="relative w-full flex justify-center mt-[80px]">
             {/* Curved background */}
             <div
               className="
@@ -52,7 +50,7 @@ export default function RootLayout({ children }) {
                 top-0
                 left-0
                 right-0
-                h-[110px]
+                h-[130px]
                 bg-gradient-to-b from-[#ffffffcc] to-[#eef2ffcc]
                 backdrop-blur-md
                 border-t border-[#d9ddee]
@@ -63,8 +61,8 @@ export default function RootLayout({ children }) {
             ></div>
 
             {/* Text + Button */}
-            <div className="relative mt-[35px] flex flex-col items-center space-y-3 z-[40]">
-              <p className="text-[#3055CF] font-bold text-2xl sm:text-3xl tracking-wide">
+            <div className="relative mt-[45px] flex flex-col items-center space-y-4 z-[40]">
+              <p className="text-[#3055CF] font-bold text-3xl sm:text-4xl tracking-wide">
                 Bring Lookupp to Your Community
               </p>
 
@@ -74,8 +72,8 @@ export default function RootLayout({ children }) {
                   bg-[#3055CF]
                   text-white
                   font-semibold
-                  text-base sm:text-lg
-                  py-3 px-8
+                  text-lg sm:text-xl
+                  py-3.5 px-10
                   rounded-full
                   shadow-md
                   hover:bg-[#2748b3]
@@ -89,13 +87,12 @@ export default function RootLayout({ children }) {
           </div>
 
           {/* Push content down so banner doesn't overlap */}
-          <main className="pt-[180px]">
+          <main className="pt-[220px]">
             {children}
           </main>
 
           <Footer />
           <Toaster position="top-center" richColors />
-
         </Providers>
       </body>
     </html>

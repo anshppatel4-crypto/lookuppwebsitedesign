@@ -14,13 +14,12 @@ export default function Hero() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left"
           >
-            <h1 className="text-balance text-4xl font-bold leading-tight tracking-tight text-[#16163F] sm:text-5xl md:text-6xl">
-              People <span className="text-[#3055CF]">&gt;</span> Screens
+            <h1 className="font-display text-balance text-6xl font-bold leading-none tracking-tight text-[#5BA7D0] sm:text-7xl md:text-8xl">
+              lookupp
             </h1>
 
-            <p className="mt-6 max-w-lg text-pretty text-lg leading-relaxed text-[#16163F]/60">
-              Lookupp rewards real-world connections and helps youth build healthier digital habits —
-              one face-to-face interaction at a time.
+            <p className="mt-8 max-w-xl text-pretty text-xl leading-relaxed text-[#16163F]/65 sm:text-2xl">
+              Rewarding users for being present with the people they care about.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
@@ -28,7 +27,7 @@ export default function Hero() {
                 href="#download"
                 className="rounded-full bg-gradient-to-r from-[#116DFF] to-[#3055CF] px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#3055CF]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(48,85,207,0.5)]"
               >
-                Download Today
+                Download Today <span aria-hidden="true">→</span>
               </a>
               <a
                 href="#learn-more"

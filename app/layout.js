@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         <Providers>
           <Navbar />
-          <div className="relative z-10 flex w-full flex-col items-center space-y-4 rounded-b-[140px] bg-gradient-to-b from-[#ffffff] to-[#f3f6ff] pb-10 pt-28 text-center sm:pt-32">
+          <div className="relative z-10 mt-24 flex w-full flex-col items-center space-y-4 rounded-b-[140px] bg-gradient-to-b from-[#ffffff] to-[#f3f6ff] pb-10 pt-8 text-center sm:mt-28 sm:pt-10">
             <p className="font-display max-w-4xl px-6 text-4xl font-bold leading-tight tracking-tight text-[#3055CF] sm:text-5xl md:text-6xl">
               Bring Lookupp to Your Community
             </p>

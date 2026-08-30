@@ -41,28 +41,25 @@ export default function RootLayout({ children }) {
         <Providers>
           <Navbar />
 
-          {/* Lower, visible curved banner */}
+          {/* Curved banner below navbar */}
           <div className="relative w-full flex justify-center mt-[80px]">
-            {/* Curved background */}
             <div
               className="
                 absolute
                 top-0
                 left-0
                 right-0
-                h-[130px]
-                bg-gradient-to-b from-[#ffffffcc] to-[#eef2ffcc]
+                h-[140px]
+                bg-gradient-to-b from-[#ffffff] to-[#f3f6ff]
                 backdrop-blur-md
-                border-t border-[#d9ddee]
-                shadow-[0_4px_12px_rgba(0,0,0,0.08)]
+                shadow-[0_8px_20px_rgba(0,0,0,0.08)]
                 rounded-b-[120px]
                 z-[30]
               "
             ></div>
 
-            {/* Text + Button */}
-            <div className="relative mt-[45px] flex flex-col items-center space-y-4 z-[40]">
-              <p className="text-[#3055CF] font-bold text-3xl sm:text-4xl tracking-wide">
+            <div className="relative mt-[50px] flex flex-col items-center space-y-4 z-[40]">
+              <p className="text-[#3055CF] font-extrabold text-3xl sm:text-4xl tracking-wide">
                 Bring Lookupp to Your Community
               </p>
 
@@ -86,7 +83,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
-          {/* Push content down so banner doesn't overlap */}
+          {/* Push content down so banner doesn’t overlap */}
           <main className="pt-[220px]">
             {children}
           </main>

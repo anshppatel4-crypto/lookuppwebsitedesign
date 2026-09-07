@@ -1,10 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles } from 'lucide-react'
 import { Reveal } from '@/components/site/motion'
-import { TEAM, SITE } from '@/lib/site'
+import { TEAM } from '@/lib/site'
 
 export default function AboutPage() {
   return (
@@ -69,37 +67,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Get Involved */}
-      <section className="py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#116DFF] to-[#3055CF] p-10 text-white shadow-2xl shadow-[#3055CF]/30 sm:p-16">
-              <div className="pointer-events-none absolute -right-10 -top-10 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-              <div className="pointer-events-none absolute -bottom-12 -left-12 h-56 w-56 rounded-full bg-white/10 blur-2xl" />
-              <div className="relative max-w-2xl">
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-medium backdrop-blur">
-                  <Sparkles className="h-4 w-4" /> Get Involved
-                </div>
-                <h2 className="mt-5 font-display text-3xl font-extrabold sm:text-4xl">
-                  Become a Lookupp Ambassador
-                </h2>
-                <p className="mt-4 text-lg text-white/80">
-                  Want to bring Lookupp to your community? Join the movement and apply to be an ambassador!
-                </p>
-                <a
-                  href={SITE.ambassadorForm}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-base font-semibold text-[#3055CF] shadow-lg transition hover:-translate-y-0.5"
-                >
-                  Become a Lookupp Ambassador
-                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                </a>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </div>
   )
 }

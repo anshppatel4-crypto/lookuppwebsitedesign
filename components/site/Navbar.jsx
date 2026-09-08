@@ -29,9 +29,9 @@ export default function Navbar() {
   return (
     <>
       <motion.header initial={{ y: -24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.65 }} className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4 sm:pt-[18px]">
-        <nav className={cn('flex h-[70px] w-full max-w-[1150px] items-center justify-between rounded-full border border-[#d6def8] bg-white/80 px-7 shadow-[0_18px_45px_-20px_rgba(48,85,207,0.42)] backdrop-blur-xl transition-all sm:px-8', scrolled && 'h-[62px] bg-white/90')}>
+        <nav className={cn('flex h-[86px] w-full max-w-[1150px] items-center justify-between rounded-full border border-[#d6def8] bg-white/80 px-8 shadow-[0_18px_45px_-20px_rgba(48,85,207,0.42)] backdrop-blur-xl transition-all sm:px-8', scrolled && 'h-[62px] bg-white/90')}>
           <Link href="/" className="flex items-center">
-            <img src={SITE.logo} alt="Lookupp" className="h-7 w-auto sm:h-8" />
+            <img src={SITE.logo} alt="Lookupp" className="h-8 w-auto sm:h-9" />
           </Link>
           <div className="hidden items-center gap-2 md:flex">
             {NAV_LINKS.map((link) => {

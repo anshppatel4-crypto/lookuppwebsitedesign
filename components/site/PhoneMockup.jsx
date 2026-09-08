@@ -17,7 +17,7 @@ export default function PhoneMockup({ className = '', image, alt = 'Lookupp app 
       className={`${float} ${className}`}
       style={{ perspective: 1000 }}
     >
-      <div className="relative w-[200px] h-[420px] rounded-[2.8rem] bg-[#0f0f2e] p-[8px] shadow-[0_40px_80px_-30px_rgba(22,22,63,0.6)] ring-1 ring-white/10">
+      <div className="relative w-[285px] h-[630px] rounded-[3.8rem] bg-[#0f0f2e] p-[10px] shadow-[0_40px_80px_-30px_rgba(22,22,63,0.6)] ring-1 ring-white/10">
         <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2.25rem] bg-white">
           {image ? (
             <img src={image} alt={alt} loading="lazy" className="h-full w-full object-contain" />

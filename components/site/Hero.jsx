@@ -17,7 +17,7 @@ export default function Hero() {
           >
                           <h1 className="text-4xl font-bold tracking-tight text-[#16163F] sm:text-5xl md:text-6xl leading-tight">
                             People{' '}
-              <span className="text-[#3055CF]">>&gt;</span>{' '}
+              <span className="text-[#3055CF]">&gt;&gt;</span>{' '}
               Screens
             </h1>
 

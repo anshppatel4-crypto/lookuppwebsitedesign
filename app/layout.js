@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
             <head>
               <script
             dangerouslySetInnerHTML={{
-                          __html: 'window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServer")&&delete e.error.message,e.error.stack="")try{console.error(e.error)}catch(e){}}});'
+                          __html: 'window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServer")&&delete e.error.message,e.error.stack="")try{console.error(e.error)}catch(e){}});'
             }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

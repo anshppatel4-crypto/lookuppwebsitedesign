@@ -33,12 +33,12 @@ export default function Hero() {
           initial={{ opacity: 0, x: 30, scale: 0.96 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.85, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-          className="relative grid h-[280px] w-full flex-1 grid-cols-3 items-center justify-items-center gap-0 sm:h-[340px] lg:h-[400px] lg:min-w-[520px]"
+          className="relative grid h-[320px] w-full flex-1 grid-cols-3 items-center justify-items-center gap-0 sm:h-[390px] lg:h-[455px] lg:min-w-[470px]"
           style={{ perspective: 1200 }}
         >
-          <PhoneMockup image={SCREENSHOTS.start} alt="Lookupp start a zone screen" className="relative scale-[0.62] sm:scale-[0.68] lg:scale-[0.78] 2xl:scale-[0.86]" float="" />
-          <PhoneMockup image={SCREENSHOTS.welcome} alt="Lookupp welcome screen" className="relative z-10 scale-[0.62] sm:scale-[0.68] lg:scale-[0.78] 2xl:scale-[0.86]" float="" />
-          <PhoneMockup image={SCREENSHOTS.rewards} alt="Lookupp rewards screen" className="relative scale-[0.62] sm:scale-[0.68] lg:scale-[0.78] 2xl:scale-[0.86]" float="" />
+          <PhoneMockup image={SCREENSHOTS.start} alt="Lookupp start a zone screen" className="relative -mx-2 left-4 scale-[0.68] sm:-mx-3 sm:left-5 sm:scale-[0.76] lg:-mx-4 lg:left-6 lg:scale-[0.86] 2xl:scale-[0.92]" float="" />
+          <PhoneMockup image={SCREENSHOTS.welcome} alt="Lookupp welcome screen" className="relative z-10 -mx-2 scale-[0.68] sm:-mx-3 sm:scale-[0.76] lg:-mx-4 lg:scale-[0.86] 2xl:scale-[0.92]" float="" />
+          <PhoneMockup image={SCREENSHOTS.rewards} alt="Lookupp rewards screen" className="relative -mx-2 -right-4 scale-[0.68] sm:-mx-3 sm:-right-5 sm:scale-[0.76] lg:-mx-4 lg:-right-6 lg:scale-[0.86] 2xl:scale-[0.92]" float="" />
         </motion.div>
       </div>
     </section>

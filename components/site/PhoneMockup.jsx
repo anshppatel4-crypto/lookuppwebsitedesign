@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-export default function PhoneMockup({ className = '', image, alt = 'Lookupp app screenshot', tone = 'blue', delay = 0, float = 'animate-floaty', label = false }) {
+export default function PhoneMockup({ className = '', image, alt = 'Lookupp app screenshot', tone = 'blue', delay = 0, float = 'animate-floaty', label = false, hero = false }) {
   const screens = {
     blue: 'from-[#116DFF] to-[#3055CF]',
     navy: 'from-[#3055CF] to-[#16163F]',
@@ -17,7 +17,7 @@ export default function PhoneMockup({ className = '', image, alt = 'Lookupp app 
       className={`${float} ${className}`}
       style={{ perspective: 1000 }}
     >
-      <div className="relative h-[396px] w-[178px] rounded-[2.5rem] bg-[#0f0f2e] p-[6px] shadow-[0_40px_80px_-30px_rgba(22,22,63,0.6)] ring-1 ring-white/10">
+      <div className={`relative rounded-[2.5rem] bg-[#0f0f2e] p-[6px] shadow-[0_40px_80px_-30px_rgba(22,22,63,0.6)] ring-1 ring-white/10 ${hero ? 'h-[410px] w-[184px]' : 'h-[396px] w-[178px]'}`}>
         <div className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2.25rem] bg-white">
           {image ? (
             <img src={image} alt={alt} loading="lazy" className="h-full w-full object-cover" />

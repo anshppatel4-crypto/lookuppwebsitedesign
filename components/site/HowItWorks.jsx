@@ -7,7 +7,7 @@ import { Wave } from './Flow'
 
 export default function HowItWorks() {
   return (
-    <section className="relative overflow-hidden bg-[#f6f7fb] py-24">
+    <section id="learn-more" className="relative scroll-mt-24 overflow-hidden bg-[#f6f7fb] py-24">
       <div className="relative z-10 mx-auto max-w-6xl px-6">
         <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-[#3055CF]">How it works</span>

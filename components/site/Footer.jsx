@@ -61,8 +61,8 @@ export default function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row">
           <p>© {year} Lookupp. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="transition hover:text-white">Privacy Policy</Link>
-            <Link href="#" className="transition hover:text-white">Terms</Link>
+            <Link href="/privacy" className="transition hover:text-white">Privacy Policy</Link>
+            <Link href="/terms-conditions" className="transition hover:text-white">Terms</Link>
           </div>
         </div>
       </div>
